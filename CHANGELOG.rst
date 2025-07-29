@@ -2,18 +2,18 @@
 Changelog for package performance_test_fixture
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.4.0 (2025-04-24)
+0.2.1 (2024-09-06)
 ------------------
-* Remove CODEOWNERS and mirror-rolling-to-main workflow. (`#28 <https://github.com/ros2/performance_test_fixture/issues/28>`_)
-* Contributors: Chris Lalancette
-
-0.3.1 (2024-06-17)
-------------------
-* Fix a warning when building on Ubuntu Noble. (`#26 <https://github.com/ros2/performance_test_fixture/issues/26>`_)
-* Contributors: Chris Lalancette
-
-0.3.0 (2024-04-26)
-------------------
+* Fix a warning when building on Ubuntu Noble. (`#26 <https://github.com/ros2/performance_test_fixture/issues/26>`_) (`#27 <https://github.com/ros2/performance_test_fixture/issues/27>`_)
+  In particular, gcc 13.2 was complaining that we were
+  accessing a pointer after a free.  And that was technically
+  true; the calls to DoNotOptimize(ptr) were after the
+  free.  Just move this before the free (when the ptr is still
+  valid) to remove the warning, but still ensure that we don't
+  optimize the pointer away.
+  (cherry picked from commit e406c3cf4a352ab3f89c43fcebe7503781be5905)
+  Co-authored-by: Chris Lalancette <clalancette@gmail.com>
+* Contributors: mergify[bot]
 
 0.2.0 (2023-04-27)
 ------------------
