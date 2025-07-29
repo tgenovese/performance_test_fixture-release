@@ -1,0 +1,12 @@
+Source: ros-jazzy-performance-test-fixture
+Section: misc
+Priority: optional
+Maintainer: Alejandro Hernandez Cordero <alejandro@openrobotics.org>
+Build-Depends: debhelper (>= 9.0.0), ros-jazzy-ament-cmake-core, ros-jazzy-ament-cmake-export-dependencies, ros-jazzy-ament-cmake-export-targets, ros-jazzy-ament-cmake-google-benchmark <!nocheck>, ros-jazzy-ament-cmake-test, ros-jazzy-ament-lint-auto <!nocheck>, ros-jazzy-ament-lint-common <!nocheck>, ros-jazzy-google-benchmark-vendor, ros-jazzy-osrf-testing-tools-cpp, ros-jazzy-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-jazzy-performance-test-fixture
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-jazzy-ament-cmake-google-benchmark, ros-jazzy-google-benchmark-vendor, ros-jazzy-osrf-testing-tools-cpp, ros-jazzy-ros-workspace
+Description: Test fixture and CMake macro for using osrf_testing_tools_cpp with Google Benchmark
